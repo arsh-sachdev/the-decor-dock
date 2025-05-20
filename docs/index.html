@@ -112,6 +112,12 @@ function submitOrder(e) {
 
   console.log("Order placed:", order);
 
+  fetch("https://script.google.com/macros/s/AKfycbw6TIWfnDAaVBkg_molZrNgvvWOmrOUp4YtYzho0D39oBLuORkOozF3g9sPc6rmfTxP/exec", {
+  method: "POST",
+  body: JSON.stringify(order),
+});
+
+
   document.getElementById("confirm").innerText = "✅ Order Placed! We’ll confirm on WhatsApp soon.";
   e.target.reset();
   cart = [];
