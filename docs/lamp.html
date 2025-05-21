@@ -50,6 +50,42 @@
     </ul>
   </div>
 </div>
+  <h4>Place Your Order</h4>
+<form onsubmit="submitOrder(event)">
+  <input type="text" id="name" placeholder="Your Name" required><br><br>
+  <input type="tel" id="phone" placeholder="Phone Number" required><br><br>
+  <textarea id="address" placeholder="Full Address" required></textarea><br><br>
+  <select id="payment">
+    <option value="COD">Cash on Delivery</option>
+    <option value="UPI">UPI</option>
+  </select><br><br>
+  <button type="submit" class="btn">Place Order</button>
+</form>
+
+<div id="confirm"></div>
+
+<script>
+function submitOrder(e) {
+  e.preventDefault();
+  const order = {
+    name: document.getElementById('name').value,
+    phone: document.getElementById('phone').value,
+    address: document.getElementById('address').value,
+    payment: document.getElementById('payment').value,
+    product: "Crystal Ball Night Lamp",
+    date: new Date().toLocaleString()
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbwGJBBuad1RHqPFUSRhWYRJ9dIsKnHgd8GLQzdeubS9fSZwbcrscprdAab4cx_06Kye/exec", {
+    method: "POST",
+    body: JSON.stringify(order),
+  });
+
+  document.getElementById("confirm").innerText = "✅ Order Placed! We’ll contact you soon.";
+  e.target.reset();
+}
+</script>
+
 
 </body>
 </html>
