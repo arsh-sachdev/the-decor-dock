@@ -35,19 +35,32 @@
 
   <h1>Crystal Ball Night Lamp</h1>
   <p class="price">₹299 (Free Delivery on First 3 Orders)</p>
- <h3>Place Your Order</h3>
-<form onsubmit="submitOrder(event)">
-  <input type="text" id="name" placeholder="Your Name" required><br><br>
-  <input type="tel" id="phone" placeholder="Phone Number" required><br><br>
-  <textarea id="address" placeholder="Full Address" required></textarea><br><br>
-  <select id="payment">
-    <option value="COD">Cash on Delivery</option>
-    <option value="UPI">UPI</option>
-  </select><br><br>
-  <button type="submit" class="btn">Place Order</button>
-</form>
 
-<div id="confirm"></div>
+  <div class="description">
+    <h3>Product Description:</h3>
+    <ul>
+      <li>Material: Crystal + Wooden Base</li>
+      <li>Light Type: LED (USB Powered)</li>
+      <li>Perfect for home decor or gifting</li>
+      <li>Soothing warm glow with universe design</li>
+      <li>Size: 2.4 inches</li>
+    </ul>
+  </div>
+</div>
+  <h3>Place Your Order</h3>
+  <form onsubmit="submitOrder(event)">
+    <input type="text" id="name" placeholder="Your Name" required />
+    <input type="tel" id="phone" placeholder="Phone Number" required />
+    <textarea id="address" placeholder="Full Address" required></textarea>
+    <select id="payment">
+      <option value="COD">Cash on Delivery</option>
+      <option value="UPI">UPI</option>
+    </select>
+    <button type="submit" class="btn">Place Order</button>
+  </form>
+
+  <div id="confirm"></div>
+</div>
 
 <script>
 function submitOrder(e) {
@@ -57,7 +70,7 @@ function submitOrder(e) {
     phone: document.getElementById('phone').value,
     address: document.getElementById('address').value,
     payment: document.getElementById('payment').value,
-    product: "Crystal Ball Night Lamp",
+    product: "Butterfly Neck Massager",
     date: new Date().toLocaleString()
   };
 
@@ -71,19 +84,5 @@ function submitOrder(e) {
 }
 </script>
 
-
 </body>
 </html>
-
-  <div class="description">
-    <h3>Product Description:</h3>
-    <ul>
-      <li>Material: Crystal + Wooden Base</li>
-      <li>Light Type: LED (USB Powered)</li>
-      <li>Perfect for home decor or gifting</li>
-      <li>Soothing warm glow with universe design</li>
-      <li>Size: 2.4 inches</li>
-    </ul>
-  </div>
-</div>
- 
