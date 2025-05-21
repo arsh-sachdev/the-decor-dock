@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OceanGlow Projector Lamp</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; }
+    header { background-color: #111; color: #fff; padding: 20px; text-align: center; }
+    .container { max-width: 900px; margin: auto; padding: 20px; background-color: #fff; }
+    .carousel { display: flex; overflow-x: auto; gap: 10px; margin-bottom: 20px; }
+    .carousel img { height: 300px; border-radius: 10px; flex-shrink: 0; }
+    h1 { margin-top: 0; }
+    .price { font-size: 1.5rem; color: green; margin: 10px 0; }
+    .btn { background: #222; color: #fff; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px; }
+    .btn:hover { background: #444; }
+    .description { margin-top: 20px; font-size: 1rem; line-height: 1.6; }
+    .back { margin-bottom: 20px; display: inline-block; text-decoration: none; color: #555; }
+    .back:hover { color: #000; }
+    input, textarea, select { width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; }
+    #confirm { color: green; font-weight: bold; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h2>The Decor Dock</h2>
+</header>
+
+<div class="container">
+  <a href="index.html" class="back">← Back to Home</a>
+
+  <div class="carousel">
+    <img src="projector1.jpg" alt="Slide 1">
+    <img src="projector2.jpg" alt="Slide 2">
+    <img src="projector3.jpg" alt="Slide 3">
+    <img src="projector4.jpg" alt="Slide 4">
+  </div>
+
+  <h1>OceanGlow Projector Lamp</h1>
+  <p class="price">₹349 (Free Delivery on First 3 Orders)</p>
+
+  <div class="description">
+    <h3>Product Details:</h3>
+    <ul>
+      <li>Projects relaxing ocean wave patterns</li>
+      <li>7 color light modes with remote control</li>
+      <li>USB powered and lightweight</li>
+      <li>Perfect for bedrooms, kids' room, meditation</li>
+    </ul>
+  </div>
+
+  <h3>Place Your Order</h3>
+  <form onsubmit="submitOrder(event)">
+    <input type="text" id="name" placeholder="Your Name" required />
+    <input type="tel" id="phone" placeholder="Phone Number" required />
+    <textarea id="address" placeholder="Full Address" required></textarea>
+    <select id="payment">
+      <option value="COD">Cash on Delivery</option>
+      <option value="UPI">UPI</option>
+    </select>
+    <button type="submit" class="btn">Place Order</button>
+  </form>
+
+  <div id="confirm"></div>
+</div>
+
+<script>
+function submitOrder(e) {
+  e.preventDefault();
+  const order = {
+    name: document.getElementById('name').value,
+    phone: document.getElementById('phone').value,
+    address: document.getElementById('address').value,
+    payment: document.getElementById('payment').value,
+    product: "OceanGlow Projector Lamp",
+    date: new Date().toLocaleString()
+  };
+
+  fetch("YOUR_SCRIPT_URL", {
+    method: "POST",
+    body: JSON.stringify(order),
+  });
+
+  document.getElementById("confirm").innerText = "✅ Order Placed! We’ll contact you soon.";
+  e.target.reset();
+}
+</script>
+
+</body>
+</html>
