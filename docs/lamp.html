@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crystal ball night lamp</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>crystal ball night lamp</title>
   <style>
-    body { font-family: Arial, sans-serif; background-color: #f2f2f2; margin: 0; padding: 0; }
-    header { background-color: #222; color: #fff; padding: 20px; text-align: center; }
-    header img { height: 60px; vertical-align: middle; margin-right: 10px; }
-    .brand-name { font-family: 'Playfair Display', serif; font-weight: bold; font-size: 2em; color: #ff6600; display: inline-block; vertical-align: middle; }
-    .product-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
-    .product { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; }
-    .product img { width: 100%; height: auto; border-radius: 10px; }
-    .btn { background: #222; color: white; padding: 10px; border: none; cursor: pointer; margin-top: 10px; border-radius: 5px; }
-    .btn:hover { background: #555; }
-    footer { background: #222; color: #fff; text-align: center; padding: 10px; }
-    a { text-decoration: none; color: inherit; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; }
+    header { background-color: #111; color: #fff; padding: 20px; text-align: center; }
+    .container { max-width: 900px; margin: auto; padding: 20px; background-color: #fff; }
+    .carousel { display: flex; overflow-x: auto; gap: 10px; margin-bottom: 20px; }
+    .carousel img { height: 300px; border-radius: 10px; flex-shrink: 0; }
+    h1 { margin-top: 0; }
+    .price { font-size: 1.5rem; color: green; margin: 10px 0; }
+    .btn { background: #222; color: #fff; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px; }
+    .btn:hover { background: #444; }
+    .description { margin-top: 20px; font-size: 1rem; line-height: 1.6; }
+    .back { margin-bottom: 20px; display: inline-block; text-decoration: none; color: #555; }
+    .back:hover { color: #000; }
+    input, textarea, select { width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; }
+    #confirm { color: green; font-weight: bold; margin-top: 10px; }
   </style>
 </head>
+<body>
 
 <header>
   <h2>The Decor Dock</h2>
@@ -26,26 +29,26 @@
 
 <div class="container">
   <a href="index.html" class="back">← Back to Home</a>
+
   <div class="carousel">
-    <img src="lamp1.jpg" alt="Crystal Ball 1">
-    <img src="lamp2.jpg" alt="Crystal Ball 2">
-    <img src="lamp3.jpg" alt="Crystal Ball 3">
+    <img src="lamp1.jpg" alt="Slide 1">
+    <img src="lamp2.jpg" alt="Slide 2">
+    <img src="lamp3.jpg" alt="Slide 3">
   </div>
 
-  <h1>Crystal Ball Night Lamp</h1>
+  <h1>Crystal ball night lamp</h1>
   <p class="price">₹299 (Free Delivery on First 3 Orders)</p>
 
   <div class="description">
-    <h3>Product Description:</h3>
+    <h3>Product Details:</h3>
     <ul>
-      <li>Material: Crystal + Wooden Base</li>
-      <li>Light Type: LED (USB Powered)</li>
-      <li>Perfect for home decor or gifting</li>
-      <li>Soothing warm glow with universe design</li>
-      <li>Size: 2.4 inches</li>
+      <li>Compact & portable electric massager</li>
+      <li>6 massage modes with intensity levels</li>
+      <li>USB rechargeable</li>
+      <li>Relieves neck & shoulder pain</li>
     </ul>
   </div>
-</div>
+
   <h3>Place Your Order</h3>
   <form onsubmit="submitOrder(event)">
     <input type="text" id="name" placeholder="Your Name" required />
