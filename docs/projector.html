@@ -50,17 +50,21 @@
     </ul>
   </div>
 
-  <h3>Place Your Order</h3>
+  <h3>•Place Your Order</h3>
+   <h2>-☎️Phone details</h2>
   <form onsubmit="submitOrder(event)">
     <input type="text" id="name" placeholder="Your Name" required />
     <input type="tel" id="phone" placeholder="Phone Number" required />
-    <textarea id="address" placeholder="Full Address" required></textarea>
-    <select id="payment">
-      <option value="COD">Cash on Delivery</option>
-      <option value="UPI">UPI</option>
+    <h2>🪧Address</h2>
+    <input id="address" placeholder="House No./ Building name" required>
+    <input id="address" placeholder="Road Name / Area / Colony" required>
+    <input id="address" placeholder="city" required>              <input id="address" placeholder="Pincode" required>
+     <input id="address" placeholder="state" required>
+  <h2> Payment Mode : Cash On Delivery 💵</h2>
     </select>
     <button type="submit" class="btn">Place Order</button>
   </form>
+
 
   <div id="confirm"></div>
 </div>
