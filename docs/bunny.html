@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BunnyGlow Night Lamp</title>
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; }
+    header { background-color: #111; color: #fff; padding: 20px; text-align: center; }
+    .container { max-width: 900px; margin: auto; padding: 20px; background-color: #fff; }
+    .carousel { display: flex; overflow-x: auto; gap: 10px; margin-bottom: 20px; }
+    .carousel img { height: 300px; border-radius: 10px; flex-shrink: 0; }
+    h1 { margin-top: 0; }
+    .price { font-size: 1.5rem; color: green; margin: 10px 0; }
+    .btn { background: #222; color: #fff; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px; }
+    .btn:hover { background: #444; }
+    .description { margin-top: 20px; font-size: 1rem; line-height: 1.6; }
+    .back { margin-bottom: 20px; display: inline-block; text-decoration: none; color: #555; }
+    .back:hover { color: #000; }
+    input, textarea, select { width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; }
+    #confirm { color: green; font-weight: bold; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+<header>
+ <img src="logo.png" alt="Logo" />
+  <span class="brand-name">The Decor Dock</span>
+</header>
+
+<div class="container">
+  <a href="index.html" class="back">← Back to Home</a>
+
+  <div class="carousel">
+    <img src="bunny1.jpg" alt="Slide 1">
+    <img src="bunny2.jpg" alt="Slide 2">
+    <img src="bunny3.jpg" alt="Slide 3">
+    <img src="bunny4.jpg" alt="Slide 4">
+    <img src="bunny5.jpg" alt="Slide 5">
+  </div>
+
+  <h1>Add a touch of cuteness and calm to your space with the BunnyGlow Night Lamp 🐰✨
+This adorable silicone bunny lamp glows with a soft, warm light — making it perfect for kids’ rooms, desk setups, or bedtime cuddles.
+
+Squishy, safe, and seriously aesthetic — it’s more than just a lamp, it’s a vibe!</h1>
+  <p class="price">₹399 (Free Delivery on First 3 Orders)</p>
+
+  <div class="description">
+    <h3>Product Details:</h3>
+     <ul>
+      <li>🐇 Super Cute Bunny Design – Aesthetic + kawaii look</li>
+      <li>💡 Warm Soothing Light – Creates a cozy, peaceful vibe</li>
+      <li> 🖐️ Squishy Silicone Body – Safe for kids, fun to squish</li>
+      <li>🔌 USB Rechargeable – Hassle-free charging</li>
+      <li>🌙 Perfect for Bedrooms, Gifting & Setup Corners</li>
+    </ul>
+  </div>
+
+  <h3>•Place Your Order</h3>
+   <h2>-☎️Phone details</h2>
+  <form onsubmit="submitOrder(event)">
+    <input type="text" id="name" placeholder="Your Name" required />
+    <input type="tel" id="phone" placeholder="Phone Number" required />
+    <h2>🪧Address</h2>
+    <input id="address" placeholder="House No./ Building name" required>
+    <input id="address" placeholder="Road Name / Area / Colony" required>
+    <input id="address" placeholder="city" required>              <input id="address" placeholder="Pincode" required>
+     <input id="address" placeholder="state" required>
+  <h2> Payment Mode : Cash On Delivery 💵</h2>
+    </select>
+    <button type="submit" class="btn">Place Order</button>
+  </form>
+
+  <div id="confirm"></div>
+</div>
+
+<script>
+function submitOrder(e) {
+  e.preventDefault();
+  const order = {
+    name: document.getElementById('name').value,
+    phone: document.getElementById('phone').value,
+    address: document.getElementById('address').value,
+    payment: document.getElementById('payment').value,
+    product: "Butterfly Neck Massager",
+    date: new Date().toLocaleString()
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbwGJBBuad1RHqPFUSRhWYRJ9dIsKnHgd8GLQzdeubS9fSZwbcrscprdAab4cx_06Kye/exec", {
+    method: "POST",
+    body: JSON.stringify(order),
+  });
+
+  document.getElementById("confirm").innerText = "✅ Order Placed! We’ll contact you soon.";
+  e.target.reset();
+}
+</script>
+
+</body>
+</html>
